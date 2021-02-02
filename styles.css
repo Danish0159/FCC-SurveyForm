@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap");
+
+/*A good way to use CSS variables is when it comes to the colors of your design. 
+Instead of copy and paste the same colors over and over again, you can place them in variables.
+To create a variable with global scope, declare it inside the :root selector.*/
+:root {
+  --color-white: #f3f3f3;
+  --color-darkblue: #1b1b32;
+  --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
+  --color-green: #37af65;
+}
+
+/*The CSS box-sizing property allows us to include the padding and border in an element's total width and height.*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* mobile friendly alternative to using background-attachment: fixed */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  /* background: var(--color-darkblue); */
+  background-image: linear-gradient(
+      115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* form container  */
+#survey-form {
+  background-color: var(--color-darkblue-alpha);
+  display: block;
+  max-width: 700px;
+  margin: auto;
+  border-radius: 6px;
+  padding: 39px 39px;
+  text-align: justify;
+}
+
+/* header styling  */
+header #title {
+  font-size: 2rem;
+  margin-top: 61px;
+  margin-bottom: 0px;
+  font-weight: 400;
+}
+
+header #description {
+  font-style: italic;
+  margin-top: 8px;
+  margin-bottom: 34px;
+}
+
+/* utility style for all the paragraphs */
+p {
+  margin-bottom: 0;
+}
+
+/* style for input fields  */
+.form-control {
+  display: block;
+  width: 100%;
+  height: 2.3rem;
+  padding: 0.4rem 0.8rem;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #015ebb;
+  border-radius: 0.25rem;
+  margin-top: 7px;
+  margin-bottom: 21px;
+}
+
+/* Style for textarea  */
+#comments {
+  height: 120px;
+  padding: 10px 10px;
+}
+
+/* style for button  */
+#submit {
+  color: white;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 12px 0px;
+  background-color: #37af65;
+  border: none;
+  border-radius: 3px;
+  margin: 12px 0px;
+  cursor: pointer;
+}
+
+/* styling radio and checkboxes  */
+label {
+  /* add display:flex property in label because label is the parent element of input and covering the input tag.  */
+  display: flex;
+  margin: 8px 0;
+}
+
+input[type="radio"] {
+  margin: 5px 10px 0 0;
+  width: 19px;
+  height: 18px;
+}
+
+input[type="checkbox"] {
+  margin: 5px 10px 0 0;
+  width: 19px;
+  height: 18px;
+}
